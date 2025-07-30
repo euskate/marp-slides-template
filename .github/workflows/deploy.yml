@@ -20,6 +20,17 @@ jobs:
 
       - name: Build Slides
         run: npm run build
+      
+      - name: Generate index.html
+        run: |
+          echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Slides Index</title></head><body><h1>📚 Slide List</h1><ul>" > dist/index.html
+          for file in dist/*.html; do
+            name=$(basename "$file")
+            [[ "$name" == "index.html" ]] && continue
+            echo "<li><a href='$name'>$name</a></li>" >> dist/index.html
+          done
+          echo "</ul></body></html>" >> dist/index.html
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
