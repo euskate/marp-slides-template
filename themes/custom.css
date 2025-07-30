@@ -1,0 +1,21 @@
+/* themes/my-theme.css */
+@charset "UTF-8";
+
+/* Marp theme 기본 상속 */
+@import 'default';
+
+section {
+  font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+/* 제목 글꼴 */
+h1, h2, h3 {
+  font-family: 'Nanum Pen Script', cursive;
+}
+
+/* 배경 및 스타일 커스터마이징도 가능 */
+section {
+  background-color: #fefefe;
+}
