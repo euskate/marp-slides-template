@@ -1,0 +1,10 @@
+{
+  "name": "marp-slides",
+  "scripts": {
+    "build": "marp --input-dir slides --output dist --html --theme-set themes/*.css",
+    "preview": "marp --server slides"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  }
+}
